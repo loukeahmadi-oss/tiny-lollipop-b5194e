@@ -1,0 +1,91 @@
+@import "tailwindcss" source("../");
+@import "highlight.js/styles/github.css";
+@source "../../../node_modules/streamdown/dist/*.js";
+
+@layer base {
+  :root {
+    --color-mali-green: #008751;
+    --color-mali-green-dark: #064e2b;
+    --color-mali-green-glow: #10b981;
+    --color-mali-gold: #f59e0b;
+    --color-mali-gold-light: #fef08a;
+    --color-mali-red: #e11d48;
+    --color-bg-dark: #0b1310;
+    --color-card-dark: #121e19;
+    --color-card-border: rgba(16, 185, 129, 0.15);
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #0b1310;
+    color: #e5e7eb;
+    overflow-x: hidden;
+  }
+
+  code {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+}
+
+/* Custom Keyframe Animations for Audio Waveforms and Mali Glows */
+@keyframes soundwave {
+  0%, 100% {
+    height: 12px;
+    opacity: 0.5;
+  }
+  50% {
+    height: 48px;
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.25), 0 0 30px rgba(245, 158, 11, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), 0 0 50px rgba(245, 158, 11, 0.35);
+  }
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.animate-soundwave {
+  animation: soundwave 1.2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatOrb 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for Chat */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 19, 16, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
